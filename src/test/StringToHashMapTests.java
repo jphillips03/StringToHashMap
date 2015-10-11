@@ -85,7 +85,13 @@ public class StringToHashMapTests {
 		assertEquals(hashMap4, new StringToHashMap(input3));
 		assertEquals(hashMap1, new StringToHashMap(input5));
 		assertEquals(hashMap1, new StringToHashMap(input6));
-		
+	}
+	
+	/**
+	 * 
+	 */
+	@Test
+	public void testErrorParsingKeyValuePairs() {
 		try {
 			new StringToHashMap(input7);
 		}
@@ -93,7 +99,10 @@ public class StringToHashMapTests {
 			assertEquals(IllegalArgumentException.class, e.getClass());
 			assertEquals("Error parsing key/value pairs. Check key/value pairs delimiter.", e.getMessage());
 		}
-		
+	}
+	
+	@Test
+	public void testErrorParsingKeyValues() {
 		try {
 			new StringToHashMap(input8);
 		}
